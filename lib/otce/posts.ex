@@ -9,13 +9,13 @@ defmodule Otce.Posts do
     }
     |> Map.merge(attrs)
     |> then(&Post.changeset(%Post{}, &1))
-    |> Repo.insert!()
+    |> Repo.insert()
   end
 
   def create_reaction(attrs) do
     %Reaction{}
     |> Reaction.changeset(attrs)
-    |> Repo.insert!()
+    |> Repo.insert()
   end
 
   def create_a_bad_post() do
